@@ -4,6 +4,8 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
@@ -36,11 +38,10 @@ public class TextBoxTests {
         $(".react-datepicker__day--022").click();
         // ввод текста в поле subject и нажать enter
         $(".subjects-auto-complete__value-container.subjects-auto-complete__value-container--is-multi.css-1hwfws3 input").setValue("History").pressEnter();
+        $("label[for='hobbies-checkbox-3']").click();
+        $("#uploadPicture").uploadFile(new File("C://test_file.jpg"));
+  sleep(2000);
 
-
-
-       // $("label[for='hobbies-checkbox-3']").click();
-       sleep(5000);
 
     }
 }
