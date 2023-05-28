@@ -34,10 +34,8 @@ public class TextBoxTests {
         $(".react-datepicker__year-select").selectOption("1992");
         // Клик для выбора даты (например, 22)
         $(".react-datepicker__day--022").click();
-        // ввод текста в поле subject
+        // ввод текста в поле subject и нажать enter
         $(".subjects-auto-complete__value-container.subjects-auto-complete__value-container--is-multi.css-1hwfws3 input").setValue("History").pressEnter();
-
-
 
 
 
