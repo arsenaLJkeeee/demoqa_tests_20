@@ -1,6 +1,7 @@
 package com.demoqa;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -37,10 +38,18 @@ public class TextBoxTests {
         // Клик для выбора даты (например, 22)
         $(".react-datepicker__day--022").click();
         // ввод текста в поле subject и нажать enter
-        $(".subjects-auto-complete__value-container.subjects-auto-complete__value-container--is-multi.css-1hwfws3 input").setValue("History").pressEnter();
+        SelenideElement history = $(".subjects-auto-complete__value-container.subjects-auto-complete__value-container--is-multi.css-1hwfws3 input").setValue("History").pressEnter();
+        sleep(1000);
         $("label[for='hobbies-checkbox-3']").click();
+        sleep(1000);
         $("#uploadPicture").uploadFile(new File("C://test_file.jpg"));
+        sleep(1000);
         $("#currentAddress").setValue("Georgia, Batumi");
+        $(".css-1wy0on6").find("span").click();
+        sleep(1000);
+        $("#currentAddress").click();
+
+
   sleep(2000);
 
 
