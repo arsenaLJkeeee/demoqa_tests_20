@@ -40,6 +40,7 @@ public class TextBoxTests {
         $(".subjects-auto-complete__value-container.subjects-auto-complete__value-container--is-multi.css-1hwfws3 input").setValue("History").pressEnter();
         $("label[for='hobbies-checkbox-3']").click();
         $("#uploadPicture").uploadFile(new File("C://test_file.jpg"));
+        $("#currentAddress").setValue("Georgia, Batumi");
   sleep(2000);
 
 
