@@ -10,6 +10,7 @@ import java.io.File;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Condition.text;
 
 public class TextBoxTests {
     @BeforeAll
@@ -45,13 +46,14 @@ public class TextBoxTests {
         $("#uploadPicture").uploadFile(new File("C://test_file.jpg"));
         sleep(1000);
         $("#currentAddress").setValue("Georgia, Batumi");
-        $(".css-1wy0on6").find("span").click();
-        sleep(1000);
-        $("#currentAddress").click();
-
-
-  sleep(2000);
-
+        //выбираем штат
+        $("#state").click();
+        $(".css-26l3qy-menu div").findAll("div").filterBy(text("Uttar Pradesh")).first().click();
+        sleep(3000);
+        // Выбор города
+        $("#city").click();
+        $(".css-26l3qy-menu div").findAll("div").filterBy(text("Agra")).first().click();
+        sleep(3000);
 
     }
 }
