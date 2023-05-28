@@ -7,10 +7,12 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.Condition.text;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TextBoxTests {
     @BeforeAll
@@ -54,6 +56,18 @@ public class TextBoxTests {
         $("#city").click();
         $(".css-26l3qy-menu div").findAll("div").filterBy(text("Agra")).first().click();
         sleep(3000);
-
+        $(byText("Submit")).pressEnter();
+        sleep(3000);
+        // Проверка наличия окна с нужными значениями
+        assertTrue($(".modal-content").has(text("Vladimir Borchevskiy")));
+        assertTrue($(".modal-content").has(text("arsenaljkeeee10@gmail.com")));
+        assertTrue($(".modal-content").has(text("Male")));
+        assertTrue($(".modal-content").has(text("5597078392")));
+        assertTrue($(".modal-content").has(text("22 June,1992")));
+        assertTrue($(".modal-content").has(text("History")));
+        assertTrue($(".modal-content").has(text("Music")));
+        assertTrue($(".modal-content").has(text("test_file.jpg")));
+        assertTrue($(".modal-content").has(text("Georgia, Batumi")));
+        assertTrue($(".modal-content").has(text("Uttar Pradesh Agra")));
     }
 }
