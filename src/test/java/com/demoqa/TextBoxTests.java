@@ -10,15 +10,15 @@ import java.io.File;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.Condition.text;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class TextBoxTests {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
+        Configuration.pageLoadStrategy = "eager";
 //        Configuration.browser = FIREFOX;
 //        Configuration.holdBrowserOpen = true;
     }
@@ -29,9 +29,8 @@ public class TextBoxTests {
         $("#firstName").setValue("Vladimir");
         $("#lastName").setValue("Borchevskiy");
         $("#userEmail").setValue("arsenaljkeeee10@gmail.com");
-        $("label[for='gender-radio-1']").click();
+        $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("5597078392");
-
         // Клик для открытия датапикера
         $("#dateOfBirthInput").click();
         // Клик для выбора месяца (например, июнь)
@@ -42,32 +41,26 @@ public class TextBoxTests {
         $(".react-datepicker__day--022").click();
         // ввод текста в поле subject и нажать enter
         SelenideElement history = $(".subjects-auto-complete__value-container.subjects-auto-complete__value-container--is-multi.css-1hwfws3 input").setValue("History").pressEnter();
-        sleep(1000);
         $("label[for='hobbies-checkbox-3']").click();
-        sleep(1000);
         $("#uploadPicture").uploadFile(new File("C://test_file.jpg"));
-        sleep(1000);
         $("#currentAddress").setValue("Georgia, Batumi");
         //выбираем штат
         $("#state").click();
         $(".css-26l3qy-menu div").findAll("div").filterBy(text("Uttar Pradesh")).first().click();
-        sleep(3000);
         // Выбор города
         $("#city").click();
         $(".css-26l3qy-menu div").findAll("div").filterBy(text("Agra")).first().click();
-        sleep(3000);
         $(byText("Submit")).pressEnter();
-        sleep(3000);
         // Проверка наличия окна с нужными значениями
-        assertTrue($(".modal-content").has(text("Vladimir Borchevskiy")));
-        assertTrue($(".modal-content").has(text("arsenaljkeeee10@gmail.com")));
-        assertTrue($(".modal-content").has(text("Male")));
-        assertTrue($(".modal-content").has(text("5597078392")));
-        assertTrue($(".modal-content").has(text("22 June,1992")));
-        assertTrue($(".modal-content").has(text("History")));
-        assertTrue($(".modal-content").has(text("Music")));
-        assertTrue($(".modal-content").has(text("test_file.jpg")));
-        assertTrue($(".modal-content").has(text("Georgia, Batumi")));
-        assertTrue($(".modal-content").has(text("Uttar Pradesh Agra")));
-    }
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Vladimir Borchevskiy"));
+        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("arsenaljkeeee10@gmail.com"));
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("5597078392"));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("22 June,1992"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("History"));
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("test_file.jpg"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Georgia, Batumi"));
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Agra"));
+}
 }
