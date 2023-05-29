@@ -2,7 +2,5 @@
 /build
 /.gradle
 *.class
-/.bat
-/.gradlew
-
+*.bat
 
