@@ -41,7 +41,7 @@ public class TextBoxTests {
         // ввод h в поле subject и нажать enter
         $("#subjectsInput").setValue("History").pressEnter();
         $("label[for='hobbies-checkbox-3']").click();
-        $("#uploadPicture").uploadFile(new File("C://test_file.jpg"));
+        $("#uploadPicture").uploadFile(new File("/Users/Ekaterina/IdeaProjects/demoqa_tests_20/src/test/resources/test_file.jpg"));
         $("#currentAddress").setValue("Georgia, Batumi");
         //выбираем штат
         $("#state").click();
