@@ -3,4 +3,5 @@
 /.gradle
 *.class
 *.bat
+/gradle
 
