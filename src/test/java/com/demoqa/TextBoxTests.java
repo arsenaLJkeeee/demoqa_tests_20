@@ -39,7 +39,7 @@ public class TextBoxTests {
         // ввод h в поле subject и нажать enter
         $("#subjectsInput").setValue("History").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#uploadPicture").uploadFromClasspath(*img*);
+        $("#uploadPicture").uploadFromClasspath("test_file.jpg");
         $("#currentAddress").setValue("Georgia, Batumi");
         //выбираем штат
         $("#state").click();
@@ -55,7 +55,7 @@ public class TextBoxTests {
         $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("5597078392"));
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("22 June,1992"));
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("History"));
-        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports"));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("test_file.jpg"));
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Georgia, Batumi"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Agra"));
