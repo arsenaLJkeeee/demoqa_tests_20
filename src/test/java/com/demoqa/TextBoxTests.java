@@ -4,12 +4,9 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
-
 
 public class TextBoxTests {
     @BeforeAll
@@ -41,8 +38,8 @@ public class TextBoxTests {
         $(".react-datepicker__day--022").click();
         // ввод h в поле subject и нажать enter
         $("#subjectsInput").setValue("History").pressEnter();
-        $("label[for='hobbies-checkbox-3']").click();
-        $("#uploadPicture").uploadFile(new File("/Users/Ekaterina/IdeaProjects/demoqa_tests_20/src/test/resources/test_file.jpg"));
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#uploadPicture").uploadFromClasspath(*img*);
         $("#currentAddress").setValue("Georgia, Batumi");
         //выбираем штат
         $("#state").click();
