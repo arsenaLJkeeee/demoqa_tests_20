@@ -45,11 +45,11 @@ public class TextBoxTests {
         $("#currentAddress").setValue("Georgia, Batumi");
         //выбираем штат
         $("#state").click();
-        $(".css-26l3qy-menu div").findAll("div").filterBy(text("Uttar Pradesh")).first().click();
-        // Выбор города
+        $("#stateCity-wrapper").$(byText("Uttar Pradesh")).click();
+        //выбираем город
         $("#city").click();
-        $(".css-26l3qy-menu div").findAll("div").filterBy(text("Agra")).first().click();
-        $(byText("Submit")).pressEnter();
+        $("#stateCity-wrapper").$(byText("Agra")).click();
+        $("#submit").pressEnter();
         // Проверка наличия окна с нужными значениями
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Vladimir Borchevskiy"));
         $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("arsenaljkeeee10@gmail.com"));
