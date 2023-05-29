@@ -7,9 +7,8 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class TextBoxTests {
@@ -25,6 +24,8 @@ public class TextBoxTests {
     @Test
     void successTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $("#firstName").setValue("Vladimir");
         $("#lastName").setValue("Borchevskiy");
         $("#userEmail").setValue("arsenaljkeeee10@gmail.com");
