@@ -14,7 +14,7 @@ public class TextBoxTests {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
-//        Configuration.browser = FIREFOX;
+//        Configuration.browser = "firefox";
 //        Configuration.holdBrowserOpen = true;
     }
 
