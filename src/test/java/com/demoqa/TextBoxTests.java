@@ -37,7 +37,7 @@ public class TextBoxTests {
         // Клик для выбора даты (например, 22)
         $(".react-datepicker__day--022").click();
         // ввод h в поле subject и нажать enter
-        $("#subjectsInput").setValue("History").pressEnter();
+        $("#subjectsInput").setValue("Computer Science").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("test_file.jpg");
@@ -55,7 +55,7 @@ public class TextBoxTests {
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
         $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("5597078392"));
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("22 June,1992"));
-        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("History"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Computer Science"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("test_file.jpg"));
