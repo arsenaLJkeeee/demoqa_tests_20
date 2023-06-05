@@ -10,6 +10,8 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationWithPageObjectsTests extends TestBase{
+   RegistrationPage registrationPage = new RegistrationPage
+
 
 
     @Test
@@ -18,9 +20,9 @@ public class RegistrationWithPageObjectsTests extends TestBase{
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
-        new RegistrationPage().setFirstName();
-        new RegistrationPage().setLastName();
-        new RegistrationPage().setUserEmail();
+       registrationPage.setFirstName("Vladimir");
+       registrationPage.setLastName("Borchevskiy");
+       registrationPage.setUserEmail("arsenaljkeeee10@gmail.com");
         $("#userEmail").setValue("arsenaljkeeee10@gmail.com");
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("5597078392");

@@ -9,11 +9,11 @@ public class RegistrationPage {
     SelenideElement lastNameInput = $("#lastName");
     SelenideElement userEmailInput = $("#userEmail");
 
-    public void setFirstName() {
-        firstNameInput.setValue("Vladimir");
-    }  public void setLastName() {
-        lastNameInput.setValue("Vladimir");
-    }  public void setUserEmail() {
-        userEmailInput.setValue("Vladimir");
+    public void setFirstName(String value) {
+        firstNameInput.setValue(value);
+    }  public void setLastName(String value) {
+        lastNameInput.setValue(value);
+    }  public void setUserEmail(String value) {
+        userEmailInput.setValue(value);
     }
 }
