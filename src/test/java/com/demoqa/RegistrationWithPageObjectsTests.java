@@ -2,6 +2,7 @@ package com.demoqa;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -10,15 +11,16 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationWithPageObjectsTests extends TestBase{
 
-SelenideElement firstNameInput = $("#firstName");
+
     @Test
      void successfulRegistrationTest() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
-        firstNameInput.setValue("Vladimir");
-        $("#lastName").setValue("Borchevskiy");
+        new RegistrationPage().setFirstName();
+        new RegistrationPage().setLastName();
+        new RegistrationPage().setUserEmail();
         $("#userEmail").setValue("arsenaljkeeee10@gmail.com");
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("5597078392");
