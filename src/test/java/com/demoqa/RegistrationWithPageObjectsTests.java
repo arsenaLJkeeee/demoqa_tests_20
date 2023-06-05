@@ -24,7 +24,6 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setSubjects("Computer Science")
                .setHobbie("Sports","Music")
                .uploadPicture("test_file.jpg");
-        //$("#uploadPicture").uploadFromClasspath("test_file.jpg");
         $("#currentAddress").setValue("Georgia, Batumi");
         //выбираем штат
         $("#state").click();
