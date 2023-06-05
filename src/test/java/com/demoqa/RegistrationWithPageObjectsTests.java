@@ -18,8 +18,8 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setFirstName("Vladimir")
                .setLastName("Borchevskiy")
                .setUserEmail("arsenaljkeeee10@gmail.com")
-               .setGender("Male");
-        $("#userNumber").setValue("5597078392");
+               .setGender("Male")
+               .setUserNumber("5597078392");
         // Клик для открытия датапикера
         $("#dateOfBirthInput").click();
         // Клик для выбора месяца (например, июнь)
