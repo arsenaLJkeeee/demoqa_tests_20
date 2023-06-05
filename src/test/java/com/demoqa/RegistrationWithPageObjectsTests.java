@@ -14,11 +14,10 @@ public class RegistrationWithPageObjectsTests extends TestBase{
 
     @Test
      void successfulRegistrationTest() {
-       registrationPage.openPage();
-
-       registrationPage.setFirstName("Vladimir");
-       registrationPage.setLastName("Borchevskiy");
-       registrationPage.setUserEmail("arsenaljkeeee10@gmail.com");
+       registrationPage.openPage()
+               .setFirstName("Vladimir")
+               .setLastName("Borchevskiy")
+               .setUserEmail("arsenaljkeeee10@gmail.com");
         $("#userEmail").setValue("arsenaljkeeee10@gmail.com");
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("5597078392");

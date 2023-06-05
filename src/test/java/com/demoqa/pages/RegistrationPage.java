@@ -11,18 +11,22 @@ public class RegistrationPage {
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail");
 
-    public void openPage() {
+    public RegistrationPage openPage() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
+        return this;
     }
-    public void setFirstName(String value) {
+    public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
+        return this;
     }
-    public void setLastName(String value) {
+    public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
+        return this;
     }
-    public void setUserEmail(String value) {
+    public RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
+        return this;
     }
 }
