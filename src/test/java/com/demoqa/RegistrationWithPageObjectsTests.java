@@ -17,9 +17,8 @@ public class RegistrationWithPageObjectsTests extends TestBase{
        registrationPage.openPage()
                .setFirstName("Vladimir")
                .setLastName("Borchevskiy")
-               .setUserEmail("arsenaljkeeee10@gmail.com");
-        $("#userEmail").setValue("arsenaljkeeee10@gmail.com");
-        $("#genterWrapper").$(byText("Male")).click();
+               .setUserEmail("arsenaljkeeee10@gmail.com")
+               .setGender("Male");
         $("#userNumber").setValue("5597078392");
         // Клик для открытия датапикера
         $("#dateOfBirthInput").click();
