@@ -10,15 +10,11 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationWithPageObjectsTests extends TestBase{
-   RegistrationPage registrationPage = new RegistrationPage
-
-
+   RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
      void successfulRegistrationTest() {
-        open("/automation-practice-form");
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+       registrationPage.openPage();
 
        registrationPage.setFirstName("Vladimir");
        registrationPage.setLastName("Borchevskiy");
