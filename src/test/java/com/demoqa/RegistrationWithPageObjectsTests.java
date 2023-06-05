@@ -19,15 +19,8 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setLastName("Borchevskiy")
                .setUserEmail("arsenaljkeeee10@gmail.com")
                .setGender("Male")
-               .setUserNumber("5597078392");
-        // Клик для открытия датапикера
-        $("#dateOfBirthInput").click();
-        // Клик для выбора месяца (например, июнь)
-        $(".react-datepicker__month-select").selectOption("June");
-        // Клик для выбора года (например, 1992)
-        $(".react-datepicker__year-select").selectOption("1992");
-        // Клик для выбора даты (например, 22)
-        $(".react-datepicker__day--022").click();
+               .setUserNumber("5597078392")
+               .setBirthDay("22","June","1992");
         // ввод h в поле subject и нажать enter
         $("#subjectsInput").setValue("Computer Science").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
