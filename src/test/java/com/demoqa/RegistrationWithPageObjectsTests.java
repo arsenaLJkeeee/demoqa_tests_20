@@ -22,8 +22,9 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setUserNumber("5597078392")
                .setBirthDay("22","June","1992")
                .setSubjects("Computer Science")
-               .setHobbie("Sports","Music");
-        $("#uploadPicture").uploadFromClasspath("test_file.jpg");
+               .setHobbie("Sports","Music")
+               .uploadPicture("test_file.jpg");
+        //$("#uploadPicture").uploadFromClasspath("test_file.jpg");
         $("#currentAddress").setValue("Georgia, Batumi");
         //выбираем штат
         $("#state").click();

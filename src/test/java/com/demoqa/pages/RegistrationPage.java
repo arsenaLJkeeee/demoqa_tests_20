@@ -16,8 +16,8 @@ public class RegistrationPage {
             userNumberInput = $("#userNumber"),
             bithdayInput = $("#dateOfBirthInput"),
             subjectsInput = $ ("#subjectsInput"),
-            hobbiesInput = $("#hobbiesWrapper");
-
+            hobbiesInput = $("#hobbiesWrapper"),
+            setPicture = $("#uploadPicture");
     CalendarComponent calendarComponent = new CalendarComponent();
 
     public RegistrationPage openPage() {
@@ -60,6 +60,12 @@ public class RegistrationPage {
         hobbiesInput.$(byText(value)).click();
         return this;
     }
+
+    public RegistrationPage uploadPicture(String value) {
+        setPicture.uploadFromClasspath(value);
+        return this;
+    }
+
 
 
 
