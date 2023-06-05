@@ -16,6 +16,7 @@ SelenideElement firstNameInput = $("#firstName");
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
+
         firstNameInput.setValue("Vladimir");
         $("#lastName").setValue("Borchevskiy");
         $("#userEmail").setValue("arsenaljkeeee10@gmail.com");
