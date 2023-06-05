@@ -20,9 +20,10 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setUserEmail("arsenaljkeeee10@gmail.com")
                .setGender("Male")
                .setUserNumber("5597078392")
-               .setBirthDay("22","June","1992");
+               .setBirthDay("22","June","1992")
+               .setSubjects("Computer Science");
         // ввод h в поле subject и нажать enter
-        $("#subjectsInput").setValue("Computer Science").pressEnter();
+     //$("#subjectsInput").setValue("Computer Science").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("test_file.jpg");

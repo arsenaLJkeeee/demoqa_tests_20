@@ -14,7 +14,8 @@ public class RegistrationPage {
             userEmailInput = $("#userEmail"),
             genderWrapper = $("#genterWrapper"),
             userNumberInput = $("#userNumber"),
-            bithdayInput = $("#dateOfBirthInput");
+            bithdayInput = $("#dateOfBirthInput"),
+            subjectsInput = $ ("#subjectsInput");
 
     CalendarComponent calendarComponent = new CalendarComponent();
 
@@ -50,7 +51,10 @@ public class RegistrationPage {
         return this;
     }
 
-
+    public RegistrationPage setSubjects(String value) {
+        subjectsInput.setValue(value);
+        return this;
+    }
 
 
 }
