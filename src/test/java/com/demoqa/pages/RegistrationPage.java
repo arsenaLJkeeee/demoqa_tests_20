@@ -15,7 +15,8 @@ public class RegistrationPage {
             genderWrapper = $("#genterWrapper"),
             userNumberInput = $("#userNumber"),
             bithdayInput = $("#dateOfBirthInput"),
-            subjectsInput = $ ("#subjectsInput");
+            subjectsInput = $ ("#subjectsInput"),
+            hobbiesInput = $("#hobbiesWrapper");
 
     CalendarComponent calendarComponent = new CalendarComponent();
 
@@ -52,9 +53,15 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setSubjects(String value) {
-        subjectsInput.setValue(value);
+        subjectsInput.setValue(value).pressEnter();
         return this;
     }
+    public RegistrationPage setHobbie(String value, String value2) {
+        hobbiesInput.$(byText(value)).click();
+        return this;
+    }
+
+
 
 
 }

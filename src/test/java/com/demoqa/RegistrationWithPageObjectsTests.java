@@ -21,11 +21,8 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setGender("Male")
                .setUserNumber("5597078392")
                .setBirthDay("22","June","1992")
-               .setSubjects("Computer Science");
-        // ввод h в поле subject и нажать enter
-     //$("#subjectsInput").setValue("Computer Science").pressEnter();
-        $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#hobbiesWrapper").$(byText("Music")).click();
+               .setSubjects("Computer Science")
+               .setHobbie("Sports","Music");
         $("#uploadPicture").uploadFromClasspath("test_file.jpg");
         $("#currentAddress").setValue("Georgia, Batumi");
         //выбираем штат
