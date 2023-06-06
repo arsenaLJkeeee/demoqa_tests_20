@@ -18,7 +18,9 @@ public class RegistrationPage {
             subjectsInput = $ ("#subjectsInput"),
             hobbiesInput = $("#hobbiesWrapper"),
             setPicture = $("#uploadPicture"),
-            currentAddressInput = $("#currentAddress");
+            currentAddressInput = $("#currentAddress"),
+            statecityInput = $("#stateCity-wrapper");
+
     CalendarComponent calendarComponent = new CalendarComponent();
 
     public RegistrationPage openPage() {
@@ -71,6 +73,15 @@ public class RegistrationPage {
         currentAddressInput.setValue(value);
         return this;
     }
-
-
+    public RegistrationPage setState(String value) {
+        $("#state").click();
+        statecityInput.$(byText(value)).click();
+        return this;
+    }
+    public RegistrationPage setCity(String value) {
+        $("#city").click();
+        statecityInput.$(byText(value)).click();
+        $("#submit").pressEnter();
+        return this;
+    }
 }

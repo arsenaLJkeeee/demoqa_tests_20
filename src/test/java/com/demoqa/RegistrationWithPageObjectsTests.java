@@ -24,14 +24,10 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setSubjects("Computer Science")
                .setHobbie("Sports","Music")
                .uploadPicture("test_file.jpg")
-               .setCurrentAddress("Georgia, Batumi");
-        //выбираем штат
-        $("#state").click();
-        $("#stateCity-wrapper").$(byText("Uttar Pradesh")).click();
-        //выбираем город
-        $("#city").click();
-        $("#stateCity-wrapper").$(byText("Agra")).click();
-        $("#submit").pressEnter();
+               .setCurrentAddress("Georgia, Batumi")
+               .setState("Uttar Pradesh")
+               .setCity("Agra");
+
         // Проверка наличия окна с нужными значениями
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Vladimir Borchevskiy"));
         $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("arsenaljkeeee10@gmail.com"));
