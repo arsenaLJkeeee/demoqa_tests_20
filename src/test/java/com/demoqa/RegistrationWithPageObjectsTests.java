@@ -31,9 +31,9 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .checkStudentEmail("arsenaljkeeee10@gmail.com")
                .checkStudentGender("Male")
                .checkStudentMobile("5597078392")
-               .checkDateOfBirth("22 June,1992");
+               .checkDateOfBirth("22 June,1992")
+               .checkSubjects("Computer Science");
 
-        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Computer Science"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("test_file.jpg"));

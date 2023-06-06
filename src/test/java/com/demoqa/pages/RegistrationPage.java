@@ -107,5 +107,9 @@ public class RegistrationPage {
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text(expectedDateOfBirth));
         return this;
     }
+    public RegistrationPage checkSubjects(String expectedSubject) {
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(expectedSubject));
+        return this;
+    }
 
 }
