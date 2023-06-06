@@ -29,11 +29,10 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setCity("Agra")
                .checkStudentName("Vladimir Borchevskiy")
                .checkStudentEmail("arsenaljkeeee10@gmail.com")
-               .checkStudentGender("Male");
+               .checkStudentGender("Male")
+               .checkStudentMobile("5597078392")
+               .checkDateOfBirth("22 June,1992");
 
-        //$(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
-        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("5597078392"));
-        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("22 June,1992"));
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Computer Science"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));

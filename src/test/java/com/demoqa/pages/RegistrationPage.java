@@ -99,4 +99,13 @@ public class RegistrationPage {
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text(expectedGender));
         return this;
     }
+    public RegistrationPage checkStudentMobile(String expectedMobile) {
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text(expectedMobile));
+        return this;
+    }
+    public RegistrationPage checkDateOfBirth(String expectedDateOfBirth) {
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text(expectedDateOfBirth));
+        return this;
+    }
+
 }
