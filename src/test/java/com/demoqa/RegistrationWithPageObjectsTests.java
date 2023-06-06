@@ -26,11 +26,10 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .uploadPicture("test_file.jpg")
                .setCurrentAddress("Georgia, Batumi")
                .setState("Uttar Pradesh")
-               .setCity("Agra");
+               .setCity("Agra")
+               .checkStudentName("Vladimir Borchevskiy")
+               .checkStudentEmail("arsenaljkeeee10@gmail.com");
 
-        // Проверка наличия окна с нужными значениями
-        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Vladimir Borchevskiy"));
-        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("arsenaljkeeee10@gmail.com"));
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
         $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("5597078392"));
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("22 June,1992"));

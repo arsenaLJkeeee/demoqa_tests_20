@@ -6,6 +6,7 @@ import com.demoqa.pages.components.CalendarComponent;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static com.codeborne.selenide.Condition.text;
 
 public class RegistrationPage {
     SelenideElement
@@ -20,6 +21,7 @@ public class RegistrationPage {
             setPicture = $("#uploadPicture"),
             currentAddressInput = $("#currentAddress"),
             statecityInput = $("#stateCity-wrapper");
+
 
     CalendarComponent calendarComponent = new CalendarComponent();
 
@@ -84,4 +86,14 @@ public class RegistrationPage {
         $("#submit").pressEnter();
         return this;
     }
+    public RegistrationPage checkStudentName(String expectedName) {
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(expectedName));
+        return this;
+    }
+
+    public RegistrationPage checkStudentEmail(String expectedEmail) {
+        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(expectedEmail));
+        return this;
+    }
+
 }
