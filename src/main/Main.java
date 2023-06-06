@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Деление double = " + divisionDouble(15.5, 2.5));
         System.out.println("Сравнение int = " + compareInt(50, 30));
         System.out.println("Сравние double и int = " + compareDoubleInt(8.5, 7));
-        System.out.println("Сложение с переполнением = " + sumOverflowInt(1000, 500));
+        System.out.println("Сложение с переполнением = " + sumOverflowInt(Integer.MAX_VALUE, 1));
         System.out.println("Остаток от деления = " + remainDivisionInt(20, 7));
         System.out.println("Инкремент = " + incrementInt(10));
         System.out.println(getLaptopModel("MacBook Pro"));
@@ -18,7 +18,7 @@ public class Main {
         System.out.println(getCountry("Russia"));
         System.out.println(getCountry("USA"));
         System.out.println(getCountry("China"));
-        System.out.println("Умножение int с переполнением = " + multiplicationOverflowInt(100, 200));
+        System.out.println("Умножение int с переполнением = " + multiplicationOverflowInt(15000000, 15000000));
     }
 
     public static int sumInt(int a, int b) {
@@ -58,7 +58,7 @@ public class Main {
     }
 
     public static int sumOverflowInt(int a, int b) {
-        return a * b;
+        return Math.addExact(a, b); // переполнение
     }
 
     public static int remainDivisionInt(int a, int b) {
@@ -82,7 +82,7 @@ public class Main {
     }
 
     public static int multiplicationOverflowInt(int a, int b) {
-        return a * b;
+        return Math.multiplyExact(a, b); // переполнение
     }
 
     public static String getCountry(String country) {
