@@ -119,4 +119,13 @@ public class RegistrationPage {
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text(expectedPicture));
         return this;
     }
+    public RegistrationPage checkAddress(String expectedAddress) {
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text(expectedAddress));
+        return this;
+    }
+    public RegistrationPage checkStateAndCity(String expectedStateAndCity) {
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text(expectedStateAndCity));
+        return this;
+    }
+
 }
