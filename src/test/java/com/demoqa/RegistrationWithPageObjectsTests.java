@@ -22,15 +22,17 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setCurrentAddress("Georgia, Batumi")
                .setState("Uttar Pradesh")
                .setCity("Agra")
-               .checkStudentName("Vladimir Borchevskiy")
-               .checkStudentEmail("arsenaljkeeee10@gmail.com")
-               .checkStudentGender("Male")
-               .checkStudentMobile("5597078392")
-               .checkDateOfBirth("22 June,1992")
-               .checkSubjects("Computer Science")
-               .checkHobbies("Sports, Music")
-               .checkPicture("test_file.jpg")
-               .checkAddress("Georgia, Batumi")
-               .checkStateAndCity("Uttar Pradesh");
+               .submitForm();
+
+        registrationPage.checkResult("Student Name", "Vladimir Borchevskiy")
+                .checkResult("Student Email", "arsenaljkeeee10@gmail.com")
+                .checkResult("Gender", "Male")
+                .checkResult("Mobile", "5597078392")
+                .checkResult("Date of Birth", "22 June, 1992")
+                .checkResult("Subjects", "Computer Science")
+                .checkResult("Hobbies", "Sports, Music")
+                .checkResult("Picture", "test_file.jpg")
+                .checkResult("Address", "Georgia, Batumi")
+                .checkResult("State and City", "Uttar Pradesh, Agra");
     }
 }
