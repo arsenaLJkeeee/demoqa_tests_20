@@ -83,48 +83,54 @@ public class RegistrationPage {
     public RegistrationPage setCity(String value) {
         $("#city").click();
         statecityInput.$(byText(value)).click();
-        $("#submit").pressEnter();
+        submitForm();
         return this;
     }
     public RegistrationPage checkStudentName(String expectedName) {
-        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(expectedName));
-        return this;
+        return checkResult("Student Name", expectedName);
     }
 
     public RegistrationPage checkStudentEmail(String expectedEmail) {
-        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(expectedEmail));
-        return this;
+        return checkResult("Student Email", expectedEmail);
     }
+
     public RegistrationPage checkStudentGender(String expectedGender) {
-        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text(expectedGender));
-        return this;
+        return checkResult("Gender", expectedGender);
     }
+
     public RegistrationPage checkStudentMobile(String expectedMobile) {
-        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text(expectedMobile));
-        return this;
+        return checkResult("Mobile", expectedMobile);
     }
+
     public RegistrationPage checkDateOfBirth(String expectedDateOfBirth) {
-        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text(expectedDateOfBirth));
-        return this;
+        return checkResult("Date of Birth", expectedDateOfBirth);
     }
+
     public RegistrationPage checkSubjects(String expectedSubject) {
-        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(expectedSubject));
-        return this;
+        return checkResult("Subjects", expectedSubject);
     }
+
     public RegistrationPage checkHobbies(String expectedHobbies) {
-        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text(expectedHobbies));
-        return this;
+        return checkResult("Hobbies", expectedHobbies);
     }
+
     public RegistrationPage checkPicture(String expectedPicture) {
-        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text(expectedPicture));
-        return this;
+        return checkResult("Picture", expectedPicture);
     }
+
     public RegistrationPage checkAddress(String expectedAddress) {
-        $(".table-responsive").$(byText("Address")).parent().shouldHave(text(expectedAddress));
+        return checkResult("Address", expectedAddress);
+    }
+
+    public RegistrationPage checkStateAndCity(String expectedStateAndCity) {
+        return checkResult("State and City", expectedStateAndCity);
+    }
+    public RegistrationPage submitForm() {
+        $("#submit").pressEnter();
         return this;
     }
-    public RegistrationPage checkStateAndCity(String expectedStateAndCity) {
-        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text(expectedStateAndCity));
+    public RegistrationPage checkResult(String field, String expectedValue) {
+        $(".table-responsive").$(byText(field)).parent().shouldHave(text(expectedValue));
         return this;
     }
 
