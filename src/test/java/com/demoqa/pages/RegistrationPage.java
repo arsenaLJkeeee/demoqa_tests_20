@@ -95,5 +95,8 @@ public class RegistrationPage {
         $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(expectedEmail));
         return this;
     }
-
+    public RegistrationPage checkStudentGender(String expectedGender) {
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text(expectedGender));
+        return this;
+    }
 }

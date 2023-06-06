@@ -28,9 +28,10 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setState("Uttar Pradesh")
                .setCity("Agra")
                .checkStudentName("Vladimir Borchevskiy")
-               .checkStudentEmail("arsenaljkeeee10@gmail.com");
+               .checkStudentEmail("arsenaljkeeee10@gmail.com")
+               .checkStudentGender("Male");
 
-        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
+        //$(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
         $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("5597078392"));
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("22 June,1992"));
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Computer Science"));
