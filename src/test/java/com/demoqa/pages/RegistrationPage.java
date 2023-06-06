@@ -111,5 +111,12 @@ public class RegistrationPage {
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(expectedSubject));
         return this;
     }
-
+    public RegistrationPage checkHobbies(String expectedHobbies) {
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text(expectedHobbies));
+        return this;
+    }
+    public RegistrationPage checkPicture(String expectedPicture) {
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text(expectedPicture));
+        return this;
+    }
 }

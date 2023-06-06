@@ -32,11 +32,9 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .checkStudentGender("Male")
                .checkStudentMobile("5597078392")
                .checkDateOfBirth("22 June,1992")
-               .checkSubjects("Computer Science");
-
-        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports"));
-        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
-        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("test_file.jpg"));
+               .checkSubjects("Computer Science")
+               .checkHobbies("Sports, Music")
+               .checkPicture("test_file.jpg");
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Georgia, Batumi"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Agra"));
     }
