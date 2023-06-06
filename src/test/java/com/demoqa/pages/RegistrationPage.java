@@ -17,7 +17,8 @@ public class RegistrationPage {
             bithdayInput = $("#dateOfBirthInput"),
             subjectsInput = $ ("#subjectsInput"),
             hobbiesInput = $("#hobbiesWrapper"),
-            setPicture = $("#uploadPicture");
+            setPicture = $("#uploadPicture"),
+            currentAddressInput = $("#currentAddress");
     CalendarComponent calendarComponent = new CalendarComponent();
 
     public RegistrationPage openPage() {
@@ -66,8 +67,10 @@ public class RegistrationPage {
         return this;
     }
 
-
-
+    public RegistrationPage setCurrentAddress(String value) {
+        currentAddressInput.setValue(value);
+        return this;
+    }
 
 
 }

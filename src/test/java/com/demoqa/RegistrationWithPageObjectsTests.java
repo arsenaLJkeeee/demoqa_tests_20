@@ -23,8 +23,8 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                .setBirthDay("22","June","1992")
                .setSubjects("Computer Science")
                .setHobbie("Sports","Music")
-               .uploadPicture("test_file.jpg");
-        $("#currentAddress").setValue("Georgia, Batumi");
+               .uploadPicture("test_file.jpg")
+               .setCurrentAddress("Georgia, Batumi");
         //выбираем штат
         $("#state").click();
         $("#stateCity-wrapper").$(byText("Uttar Pradesh")).click();
