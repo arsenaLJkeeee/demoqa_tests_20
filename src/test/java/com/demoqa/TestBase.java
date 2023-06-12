@@ -1,6 +1,7 @@
 package com.demoqa;
 
 import com.codeborne.selenide.Configuration;
+import com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
