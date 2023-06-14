@@ -27,7 +27,8 @@ public class RegistrationWithPageObjectsTestsWithTestData extends TestBase{
                 hobbie = getRandomHobbie(),
                 state = getRandomState(),
                 city = getRandomCity(state),
-                address = faker.address().fullAddress();
+                address = faker.address().fullAddress(),
+                picture = "test_file.jpg";
 
        registrationPage.openPage()
                .setFirstName(firstName)
@@ -38,7 +39,7 @@ public class RegistrationWithPageObjectsTestsWithTestData extends TestBase{
                .setBirthDay(day,month,year)
                .setSubjects(subject)
                .setHobbie(hobbie)
-               .uploadPicture("test_file.jpg")
+               .uploadPicture(picture)
                .setCurrentAddress(address)
                .setState(state)
                .setCity(city)
@@ -51,7 +52,7 @@ public class RegistrationWithPageObjectsTestsWithTestData extends TestBase{
                 .checkResult("Date of Birth", day + " " + month + "," + year)
                 .checkResult("Subjects", subject)
                 .checkResult("Hobbies", hobbie)
-                .checkResult("Picture", "test_file.jpg")
+                .checkResult("Picture", picture)
                 .checkResult("Address", address)
                 .checkResult("State and City", "State and City" + " " + state + " " + city);
     }

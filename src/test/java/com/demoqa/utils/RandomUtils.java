@@ -32,13 +32,13 @@ return getRandomString(10)+"@qa.guru";
     }
     public static String getRandomGender(){
        String[] genders ={"Male", "Female", "Other"};
-       return getRandomItemFromArray(genders);
+        return faker.options().option(genders);
     }
 
-    private static String getRandomItemFromArray(String[]values){
-int index = getRandomInt (0, values.length -1);
-        return values[index];
-    }
+    //  private static String getRandomItemFromArray(String[]values){
+//int index = getRandomInt (0, values.length -1);
+      // return values[index];
+   // }
     public static String getRandomPhone(){
           return String.format("%s%s%s%s%s", getRandomInt(1, 9),getRandomInt(111, 999), getRandomInt(111, 999), getRandomInt(11, 99), getRandomInt(11, 99));
     }
@@ -48,18 +48,18 @@ int index = getRandomInt (0, values.length -1);
     }
     public static String getRandomMonth(){
         String[] months ={"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-        return getRandomItemFromArray(months);
+        return faker.options().option(months);
     }
     public static String getRandomYear() {
         return String.valueOf(getRandomInt(1953, 2002));
     }
     public static String getRandomSubject(){
-        String[] subjects ={"Hindi", "History", "Computer Science", "Commerce", "Maths", "Accounting", "English", "Physics", "Chemistry", "Civics", "Social Studies", "Biology"};
-        return getRandomItemFromArray(subjects);
+        String[] subjects = {"Hindi", "History", "Computer Science", "Commerce", "Maths", "Accounting", "English", "Physics", "Chemistry", "Civics", "Social Studies", "Biology"};
+        return faker.options().option(subjects);
     }
     public static String getRandomHobbie(){
         String[] hobbies ={"Sports", "Reading", "Music"};
-        return getRandomItemFromArray(hobbies);
+        return faker.options().option(hobbies);
     }
 
     public static String getRandomState() {
