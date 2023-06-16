@@ -73,6 +73,7 @@ return getRandomString(10)+"@qa.guru";
         return faker.options().option(state);
     }
 
+    //генерируем рандомный город относительно того, какой выбран штат (у каждого штата свой список городов)
     public static String getRandomCity(String state) {
         if (state.equals("NCR")) {
             String[] city = {"Delhi", "Gurgaon", "Noida"};
