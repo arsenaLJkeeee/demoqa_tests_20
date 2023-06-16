@@ -54,6 +54,8 @@ return getRandomString(10)+"@qa.guru";
     public static String getRandomYear() {
         return String.valueOf(getRandomInt(1953, 2002));
     }
+
+    //генерируем рандомный предмет из заранее заданного списка
     public static String getRandomSubject(){
         String[] subjects = {"Hindi", "History", "Computer Science", "Commerce", "Maths", "Accounting", "English", "Physics", "Chemistry", "Civics", "Social Studies", "Biology"};
         return faker.options().option(subjects);
