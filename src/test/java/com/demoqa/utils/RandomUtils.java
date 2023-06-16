@@ -60,6 +60,8 @@ return getRandomString(10)+"@qa.guru";
         String[] subjects = {"Hindi", "History", "Computer Science", "Commerce", "Maths", "Accounting", "English", "Physics", "Chemistry", "Civics", "Social Studies", "Biology"};
         return faker.options().option(subjects);
     }
+
+    //генерируем рандомное хобби из заранее заданного списка
     public static String getRandomHobbie(){
         String[] hobbies ={"Sports", "Reading", "Music"};
         return faker.options().option(hobbies);
