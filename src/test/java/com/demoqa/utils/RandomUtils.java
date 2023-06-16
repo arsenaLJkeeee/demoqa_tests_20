@@ -43,6 +43,7 @@ return getRandomString(10)+"@qa.guru";
     public static String getRandomDay() {
         return String.valueOf(getRandomInt(10, 28));
     }
+    //генерируем рандомный месяц для датапикера
     public static String getRandomMonth(){
         String[] months ={"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         return faker.options().option(months);
