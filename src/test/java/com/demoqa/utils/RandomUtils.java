@@ -39,15 +39,18 @@ return getRandomString(10)+"@qa.guru";
     public static String getRandomPhone(){
           return String.format("%s%s%s%s%s", getRandomInt(1, 9),getRandomInt(111, 999), getRandomInt(111, 999), getRandomInt(11, 99), getRandomInt(11, 99));
     }
+
     //генерируем рандомный день для датапикера
     public static String getRandomDay() {
         return String.valueOf(getRandomInt(10, 28));
     }
+
     //генерируем рандомный месяц для датапикера
     public static String getRandomMonth(){
         String[] months ={"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         return faker.options().option(months);
     }
+    //генерируем рандомный год для датапикера
     public static String getRandomYear() {
         return String.valueOf(getRandomInt(1953, 2002));
     }
