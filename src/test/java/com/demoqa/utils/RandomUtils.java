@@ -13,6 +13,7 @@ public class RandomUtils {
         System.out.println(getRandomGender());
         System.out.println(getRandomPhone());
     }
+    //метод генерации случайного текста
     public static String getRandomString(int len){
         String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         SecureRandom rnd = new SecureRandom();
@@ -22,7 +23,7 @@ public class RandomUtils {
         return sb.toString();
 
     }
-
+    //генерируем рандомный e-mail из 10 символов, оканчивающийся на "@qa.guru"
     public static String getRandomEmail(){
 return getRandomString(10)+"@qa.guru";
     }
@@ -79,5 +80,6 @@ return getRandomString(10)+"@qa.guru";
         }
         return null;
     }
+
 
 }
