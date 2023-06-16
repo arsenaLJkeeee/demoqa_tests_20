@@ -67,6 +67,7 @@ return getRandomString(10)+"@qa.guru";
         return faker.options().option(hobbies);
     }
 
+    //генерируем рандомный штат из заранее заданного списка
     public static String getRandomState() {
         String[] state = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
         return faker.options().option(state);
