@@ -35,10 +35,6 @@ return getRandomString(10)+"@qa.guru";
         return faker.options().option(genders);
     }
 
-    //  private static String getRandomItemFromArray(String[]values){
-//int index = getRandomInt (0, values.length -1);
-      // return values[index];
-   // }
     public static String getRandomPhone(){
           return String.format("%s%s%s%s%s", getRandomInt(1, 9),getRandomInt(111, 999), getRandomInt(111, 999), getRandomInt(11, 99), getRandomInt(11, 99));
     }
