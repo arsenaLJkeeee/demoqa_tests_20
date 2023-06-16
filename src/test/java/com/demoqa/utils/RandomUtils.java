@@ -35,7 +35,7 @@ return getRandomString(10)+"@qa.guru";
        String[] genders ={"Male", "Female", "Other"};
         return faker.options().option(genders);
     }
-
+    //генерируем рандомный номер телефона по маске
     public static String getRandomPhone(){
           return String.format("%s%s%s%s%s", getRandomInt(1, 9),getRandomInt(111, 999), getRandomInt(111, 999), getRandomInt(11, 99), getRandomInt(11, 99));
     }
