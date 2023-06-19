@@ -40,8 +40,9 @@ public class ParametrizedTests extends TestBase {
         $$(byText(permanentAddress));
     }
 
+    @ParameterizedTest
     @MethodSource("dataArguments")
-    void filledTextBoxPageShouldShowCorrectData(String firstName, String eMail, String currentAddress, String permanentAddress) {
+    void filledTextBoxPageShouldShowCorrectDataUsingMethodSource(String firstName, String eMail, String currentAddress, String permanentAddress) {
         $("#userName").setValue(firstName);
         $("#userEmail").setValue(eMail);
         $("#currentAddress").setValue(currentAddress);
@@ -56,8 +57,8 @@ public class ParametrizedTests extends TestBase {
 
     static Stream<Arguments> dataArguments() {
         return Stream.of(
-                Arguments.of("Alex", "alex@mail.ru", "Industrialnaia street", "Permanent address of Alex"),
-                Arguments.of("Mikhail", "mikhail@mail.ru", "Mikhailovskaya street", "Permanent address of Mikhail")
+                Arguments.of("Sasha", "sasha@mail.ru", "Sashinskaya street", "Permanent address of Sasha"),
+                Arguments.of("Grisha", "grisha@mail.ru", "Grishinskaya street", "Permanent address of Grisha")
         );
     }
 }
