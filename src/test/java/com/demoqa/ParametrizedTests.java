@@ -6,6 +6,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
+import static com.codeborne.selenide.Condition.*;
 
 import java.util.stream.Stream;
 
@@ -21,7 +23,7 @@ public class ParametrizedTests extends TestBase {
         executeJavaScript("$('footer').remove()");
     }
 
-    @DisplayName("Заполненная форма должна показывать корректные данные при нажатии на submit")
+    @DisplayName("Заполненная форма должна показывать корректные данные при нажатии на submit, используем CsvSource")
     @CsvSource(value = {
             "Alex |  alex@mail.ru | Industrialnaia street | Permanent address of Alex",
             "Mikhail    |  mikhail@mail.ru | Mikhailovskaya street | Permanent address of Mikhail"
@@ -41,6 +43,7 @@ public class ParametrizedTests extends TestBase {
     }
 
     @ParameterizedTest
+    @DisplayName("Заполненная форма должна показывать корректные данные при нажатии на submit, используем MethodSource")
     @MethodSource("dataArguments")
     void filledTextBoxPageShouldShowCorrectDataUsingMethodSource(String firstName, String eMail, String currentAddress, String permanentAddress) {
         $("#userName").setValue(firstName);
@@ -60,5 +63,15 @@ public class ParametrizedTests extends TestBase {
                 Arguments.of("Sasha", "sasha@mail.ru", "Sashinskaya street", "Permanent address of Sasha"),
                 Arguments.of("Grisha", "grisha@mail.ru", "Grishinskaya street", "Permanent address of Grisha")
         );
+    }
+    @ParameterizedTest
+    @DisplayName("При вводе параметров без символа @ после клика Submit инпут отображает ошибку")
+    @ValueSource(
+            strings = {"Olga", "Olgamail.ru", "Olginskaya street", "Permanent address of Olga"}
+    )
+    void emailWithoutProperSymbolShouldShowError(String eMail) {
+        $("#userEmail").setValue(eMail);
+        $("#submit").click();
+        $("#userEmail").shouldBe(cssClass("field-error"));
     }
 }
