@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class ParametrizedTests extends TestBase {
+public class ParametrizedTests extends ParametrizedTestsTestBase {
 
     @BeforeEach
     void openPage() {
