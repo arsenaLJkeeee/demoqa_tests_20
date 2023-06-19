@@ -34,10 +34,10 @@ public class ParametrizedTests extends TestBase {
         $("#currentAddress").setValue(currentAddress);
         $("#permanentAddress").setValue(permanentAddress);
         $("#submit").click();
-        $(byText(firstName));
-        $(byText(eMail));
-        $(byText(currentAddress));
-        $(byText(permanentAddress));
+        $$(byText(firstName));
+        $$(byText(eMail));
+        $$(byText(currentAddress));
+        $$(byText(permanentAddress));
     }
 
     @MethodSource("dataArguments")
@@ -48,10 +48,10 @@ public class ParametrizedTests extends TestBase {
         $("#permanentAddress").setValue(permanentAddress);
         $("#submit").click();
 
-        $(byText(firstName));
-        $(byText(eMail));
-        $(byText(currentAddress));
-        $(byText(permanentAddress));
+        $$(byText(firstName));
+        $$(byText(eMail));
+        $$(byText(currentAddress));
+        $$(byText(permanentAddress));
     }
 
     static Stream<Arguments> dataArguments() {
