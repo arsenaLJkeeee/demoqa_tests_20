@@ -65,7 +65,7 @@ public class ParametrizedTests extends ParametrizedTestsTestBase {
     @DisplayName("При вводе параметров без символа @ после клика Submit инпут отображает ошибку")
     @ParameterizedTest
     @ValueSource(
-            strings = {"Olga", "Olgamail.ru", "Olginskaya street", "Permanent address of Olga"}
+            strings = {"Olga", "Olgamail.ru", "Olginskaya street", "123*&%$#)("}
     )
     void emailWithoutProperSymbolShouldShowError(String eMail) {
         $("#userEmail").setValue(eMail);
