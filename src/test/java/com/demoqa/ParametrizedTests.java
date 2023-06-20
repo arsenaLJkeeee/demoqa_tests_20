@@ -41,9 +41,8 @@ public class ParametrizedTests extends ParametrizedTestsTestBase {
         $$(byText(currentAddress));
         $$(byText(permanentAddress));
     }
-
-    @ParameterizedTest
     @DisplayName("Заполненная форма должна показывать корректные данные при нажатии на submit, используем MethodSource")
+    @ParameterizedTest
     @MethodSource("dataArguments")
     void filledTextBoxPageShouldShowCorrectDataUsingMethodSource(String firstName, String eMail, String currentAddress, String permanentAddress) {
         $("#userName").setValue(firstName);
@@ -51,7 +50,6 @@ public class ParametrizedTests extends ParametrizedTestsTestBase {
         $("#currentAddress").setValue(currentAddress);
         $("#permanentAddress").setValue(permanentAddress);
         $("#submit").click();
-
         $$(byText(firstName));
         $$(byText(eMail));
         $$(byText(currentAddress));
