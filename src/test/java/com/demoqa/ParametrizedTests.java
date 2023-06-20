@@ -62,8 +62,8 @@ public class ParametrizedTests extends ParametrizedTestsTestBase {
                 Arguments.of("Grisha", "grisha@mail.ru", "Grishinskaya street", "Permanent address of Grisha")
         );
     }
-    @ParameterizedTest
     @DisplayName("При вводе параметров без символа @ после клика Submit инпут отображает ошибку")
+    @ParameterizedTest
     @ValueSource(
             strings = {"Olga", "Olgamail.ru", "Olginskaya street", "Permanent address of Olga"}
     )
