@@ -15,7 +15,7 @@ public class LsTest extends LsTestBase {
 
 
     @Test
-    void successTest() {
+    void redesignCupisWalletClickTest() {
         open(baseUrl);
         $(byText("Вход")).click();
         $("#mobilePhone").shouldBe(visible).setValue("1014203177");
