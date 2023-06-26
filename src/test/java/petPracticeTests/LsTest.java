@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
@@ -20,7 +21,9 @@ public class LsTest extends LsTestBase {
     void redesignCupisWalletClickTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открываем главную страницу", () -> {open(baseUrl);});
-        sleep(10000);
+        sleep(11000);
+        step("Принимаем куки", () -> {$(byText("Принять все")).shouldBe(visible).click();});
+        sleep(5000);
         step("Кликаем по кнопке Вход", () -> {$(byText("Вход")).shouldBe(visible).click();});
         sleep(10000);
         step("Вводим номер телефона", () -> {$("#mobilePhone").shouldBe(visible).setValue("1014203177");});
@@ -31,6 +34,6 @@ public class LsTest extends LsTestBase {
         sleep(10000);
         $(".bottom-menu_eG-q").lastChild().click();
         $(".wallet__buttons-e1c20c").$(byText("Пополнить")).shouldBe(visible).click();
-        $(".slider__inner_8tZn").$(byText("Кошелек ЦУПИС")).shouldBe(visible).click();
+        $(".payment-system-1db189").$(withText("Кошелек ЦУПИС")).click();
     }
 }
