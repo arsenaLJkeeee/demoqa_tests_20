@@ -24,6 +24,5 @@ public class LsTest extends LsTestBase {
         $(".bottom-menu_eG-q").lastChild().click();
         $(".wallet__buttons-e1c20c").$(byText("Пополнить")).shouldBe(visible).click();
         $(".slider__inner_8tZn").$(byText("Кошелек ЦУПИС")).shouldBe(visible).click();
-
     }
 }
