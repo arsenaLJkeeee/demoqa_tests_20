@@ -1,6 +1,9 @@
 package com.demoqa;
 
+import com.codeborne.selenide.logevents.SelenideLog;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.pages.RegistrationPage;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import com.github.javafaker.Faker;
 
@@ -12,6 +15,7 @@ public class RegistrationWithPageObjectsTestsWithTestData extends TestBase{
 
     @Test
      void successfulRegistrationTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         Faker faker = new Faker();
 
 

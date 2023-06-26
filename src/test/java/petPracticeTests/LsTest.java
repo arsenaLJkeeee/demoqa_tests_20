@@ -1,7 +1,9 @@
 package petPracticeTests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.LsTestBase;
 
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -16,6 +18,7 @@ public class LsTest extends LsTestBase {
 
     @Test
     void redesignCupisWalletClickTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         open(baseUrl);
         $(byText("Вход")).click();
         $("#mobilePhone").shouldBe(visible).setValue("1014203177");
