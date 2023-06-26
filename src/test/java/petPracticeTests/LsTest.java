@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-
+import static io.qameta.allure.Allure.step;
 
 
 public class LsTest extends LsTestBase {
@@ -19,11 +19,16 @@ public class LsTest extends LsTestBase {
     @Test
     void redesignCupisWalletClickTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        open(baseUrl);
-        $(byText("Вход")).click();
-        $("#mobilePhone").shouldBe(visible).setValue("1014203177");
-        $("#password").setValue("123123eE");
-        $(byText("Войти")).click();
+        step("Открываем главную страницу", () -> {open(baseUrl);});
+        sleep(10000);
+        step("Кликаем по кнопке Вход", () -> {$(byText("Вход")).shouldBe(visible).click();});
+        sleep(10000);
+        step("Вводим номер телефона", () -> {$("#mobilePhone").shouldBe(visible).setValue("1014203177");});
+        sleep(10000);
+        step("Вводим пароль", () -> {$("#password").setValue("123123eE");});
+        sleep(10000);
+        step("Кликаем по кнопке Войти", () -> {$(byText("Войти")).click();});
+        sleep(10000);
         $(".bottom-menu_eG-q").lastChild().click();
         $(".wallet__buttons-e1c20c").$(byText("Пополнить")).shouldBe(visible).click();
         $(".slider__inner_8tZn").$(byText("Кошелек ЦУПИС")).shouldBe(visible).click();
