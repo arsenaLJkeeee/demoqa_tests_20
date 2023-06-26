@@ -7,7 +7,7 @@ allure {
     report{//секция репорта
         version.set("2.19.0")
     }
-    adapter {
+    adapter {//отвечает за появление папки build/allure-results
     aspectjWeaver.set(true)
         frameworks{
             junit5{
