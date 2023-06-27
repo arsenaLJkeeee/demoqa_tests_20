@@ -14,13 +14,13 @@ import static com.demoqa.Allure.Tests.AllureTests.*;
 
 
 public class WebSteps {
-    @Step("Open Main page")
+    @Step("Открываю страницу")
     public WebSteps openMainPage() {
         open(baseUrl);
         return this;
     }
 
-    @Step("Find repository: {repo}")
+    @Step("Ищу репозиторий: {repo}")
     public WebSteps searchRepo(String repo) {
         headerSearch.shouldBe(visible, Duration.ofSeconds(5000)).click();
         headerSearch.setValue(repo).pressEnter();
@@ -28,14 +28,14 @@ public class WebSteps {
         return this;
     }
 
-    @Step("Click on Tab: Issue")
+    @Step("Кликаю на Issue")
     public WebSteps clickOnTab() {
         issuesTab.shouldBe(visible, Duration.ofSeconds(5000));
         issuesTab.click();
         return this;
     }
 
-    @Step("Check issue number: {issueNumber}")
+    @Step("Проверяю номер Issue: {issueNumber}")
     public WebSteps checkIssueNumber(String issueNumber) {
         $(withText(issueNumber)).should(exist);
         return this;
