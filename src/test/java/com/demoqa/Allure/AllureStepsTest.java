@@ -26,12 +26,12 @@ public class AllureStepsTest {
             open(baseUrl);
         });
 
-        step("Ищу репозиторий" + REPOSITORY, () -> {
+        step("Ищу репозиторий" + " " + REPOSITORY, () -> {
             $(".header-search-input").click();
             $(".header-search-input").sendKeys(REPOSITORY);
             $(".header-search-input").submit();
         });
-        step("Кликаю по ссылке репозитория" + REPOSITORY, () -> {
+        step("Кликаю по ссылке репозитория" + " " + REPOSITORY, () -> {
             $(byTagAndText("a", REPOSITORY));
         });
         step("Проверяю наличие текста issue", () -> {
