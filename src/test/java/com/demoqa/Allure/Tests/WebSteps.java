@@ -2,6 +2,8 @@ package com.demoqa.Allure.Tests;
 
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Configuration.baseUrl;
@@ -18,17 +20,17 @@ public class WebSteps {
         return this;
     }
 
-    @Step("Find repository: {repoName}")
-    public WebSteps findRepo(String repoName) {
-        headerSearch.click();
-        headerSearch.setValue(repoName).pressEnter();
-        selenideRepo.click();
+    @Step("Find repository: {repo}")
+    public WebSteps searchRepo(String repo) {
+        headerSearch.shouldBe(visible, Duration.ofSeconds(5000)).click();
+        headerSearch.setValue(repo).pressEnter();
+        selenideRepo.shouldBe(visible, Duration.ofSeconds(5000)).click();
         return this;
     }
 
-    @Step("Select Tab: Issue")
-    public WebSteps selectTab() {
-        issuesTab.shouldBe(visible);
+    @Step("Click on Tab: Issue")
+    public WebSteps clickOnTab() {
+        issuesTab.shouldBe(visible, Duration.ofSeconds(5000));
         issuesTab.click();
         return this;
     }
