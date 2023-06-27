@@ -17,15 +17,15 @@ public class AllureTests extends TestBase {
             valueOfSearch = "selenide",
             numberOfIssue = "2355";
     public static SelenideElement
-            headerSearch = $(".header-search-input"),
+            searchField = $(".header-search-input"),
             issuesTab = $("#issues-tab"),
             selenideRepo = $("a[href=\"/selenide/selenide\"]");
 
     @Test
     void SelenideTest() {
         open(baseUrl);
-        headerSearch.shouldBe(visible, Duration.ofSeconds(5000)).click();
-        headerSearch.setValue(valueOfSearch).pressEnter();
+        searchField.shouldBe(visible, Duration.ofSeconds(5000)).click();
+        searchField.setValue(valueOfSearch).pressEnter();
         selenideRepo.shouldBe(visible, Duration.ofSeconds(5000)).click();
         issuesTab.shouldBe(visible, Duration.ofSeconds(50000)).click();
         $(withText(numberOfIssue)).should(exist);
@@ -35,8 +35,8 @@ public class AllureTests extends TestBase {
     void stepLambdaTest() {
         step("Открываю страницу", () -> open(baseUrl));
         step("Ищу репозиторий: " + valueOfSearch, () -> {
-            headerSearch.click();
-            headerSearch.setValue(valueOfSearch).pressEnter();
+            searchField.click();
+            searchField.setValue(valueOfSearch).pressEnter();
             selenideRepo.click();
         });
         step("Выбираю Issue", () -> {

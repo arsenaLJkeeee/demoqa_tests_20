@@ -22,8 +22,8 @@ public class WebSteps {
 
     @Step("Ищу репозиторий: {repo}")
     public WebSteps searchRepo(String repo) {
-        headerSearch.shouldBe(visible, Duration.ofSeconds(5000)).click();
-        headerSearch.setValue(repo).pressEnter();
+        searchField.shouldBe(visible, Duration.ofSeconds(5000)).click();
+        searchField.setValue(repo).pressEnter();
         selenideRepo.shouldBe(visible, Duration.ofSeconds(5000)).click();
         return this;
     }
