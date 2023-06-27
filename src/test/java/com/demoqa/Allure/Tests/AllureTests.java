@@ -40,7 +40,7 @@ public class AllureTests extends TestBase {
             selenideRepo.click();
         });
         step("Выбираю Issue", () -> {
-            issuesTab.shouldBe(visible, Duration.ofSeconds(50000));
+            issuesTab.shouldBe(visible, Duration.ofSeconds(5000));
             issuesTab.click();
         });
         step("Проверяю номер Issue: " + numberOfIssue, () -> {
