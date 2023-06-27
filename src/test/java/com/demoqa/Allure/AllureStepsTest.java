@@ -46,7 +46,7 @@ public class AllureStepsTest {
         steps.openMainPage();
         steps.searchForRepository(REPOSITORY);
         steps.clickOnRepositoryText(REPOSITORY);
-        steps.shouldSeeIssue(ISSUE);
+        steps.shouldHaveIssue(ISSUE);
 
     }
 }

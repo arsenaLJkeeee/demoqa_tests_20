@@ -27,7 +27,7 @@ public class AllureWebSteps {
     }
 
     @Step("Проверяю наличие текста issue")
-    public void shouldSeeIssue(String issue) {
+    public void shouldHaveIssue(String issue) {
         $(withText(issue)).should(exist);
     }
 }
