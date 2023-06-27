@@ -27,7 +27,7 @@ public class AllureTests extends TestBase {
         searchField.shouldBe(visible, Duration.ofSeconds(5000)).click();
         searchField.setValue(valueOfSearch).pressEnter();
         selenideRepo.shouldBe(visible, Duration.ofSeconds(5000)).click();
-        issuesTab.shouldBe(visible, Duration.ofSeconds(50000)).click();
+        issuesTab.shouldBe(visible, Duration.ofSeconds(5000)).click();
         $(withText(numberOfIssue)).should(exist);
     }
 
