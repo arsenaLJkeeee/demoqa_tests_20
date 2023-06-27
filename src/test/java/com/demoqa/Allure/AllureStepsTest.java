@@ -1,7 +1,6 @@
 package com.demoqa.Allure;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.demoqa.Allure.AllureWebSteps;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 
