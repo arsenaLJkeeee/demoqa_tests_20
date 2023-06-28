@@ -8,7 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.DisplayName;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selenide.open;
 import static com.demoqa.utils.RandomUtils.*;
+import static io.qameta.allure.Allure.step;
 
 
 public class RemoteRegistrationWithPageObjectsTestsWithTestData extends RemoteTestBase{
@@ -36,23 +39,22 @@ public class RemoteRegistrationWithPageObjectsTestsWithTestData extends RemoteTe
                 city = getRandomCity(state),
                 address = faker.address().fullAddress(),
                 picture = "test_file.jpg";
+        step("Open page and fill the form", () -> {registrationPage.openPage()
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setUserEmail(userEmail)
+                .setGender(userGender)
+                .setUserNumber(phoneNumber)
+                .setBirthDay(day,month,year)
+                .setSubjects(subject)
+                .setHobbie(hobbie)
+                .uploadPicture(picture)
+                .setCurrentAddress(address)
+                .setState(state)
+                .setCity(city)
+                .submitForm();});
 
-       registrationPage.openPage()
-               .setFirstName(firstName)
-               .setLastName(lastName)
-               .setUserEmail(userEmail)
-               .setGender(userGender)
-               .setUserNumber(phoneNumber)
-               .setBirthDay(day,month,year)
-               .setSubjects(subject)
-               .setHobbie(hobbie)
-               .uploadPicture(picture)
-               .setCurrentAddress(address)
-               .setState(state)
-               .setCity(city)
-               .submitForm();
-
-        registrationPage.checkResult("Student Name", firstName + " " + lastName)
+        step("Check the result", () -> {registrationPage.checkResult("Student Name", firstName + " " + lastName)
                 .checkResult("Student Email", userEmail)
                 .checkResult("Gender", userGender)
                 .checkResult("Mobile", phoneNumber)
@@ -61,6 +63,7 @@ public class RemoteRegistrationWithPageObjectsTestsWithTestData extends RemoteTe
                 .checkResult("Hobbies", hobbie)
                 .checkResult("Picture", picture)
                 .checkResult("Address", address)
-                .checkResult("State and City", "State and City" + " " + state + " " + city);
+                .checkResult("State and City", "State and City" + " " + state + " " + city);});
+
     }
 }
