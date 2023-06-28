@@ -5,6 +5,8 @@ import com.demoqa.pages.RegistrationPage;
 import com.github.javafaker.Faker;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.DisplayName;
 
 import static com.demoqa.utils.RandomUtils.*;
 
@@ -13,6 +15,8 @@ public class RemoteRegistrationWithPageObjectsTestsWithTestData extends RemoteTe
    RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
+    @Tag("remote")
+    @DisplayName("Successful registration")
      void successfulRegistrationTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Faker faker = new Faker();
