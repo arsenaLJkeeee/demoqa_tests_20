@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 import java.util.Map;
 
