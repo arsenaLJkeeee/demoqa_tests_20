@@ -1,6 +1,5 @@
 package com.demoqa;
 
-import com.codeborne.selenide.logevents.SelenideLog;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.pages.RegistrationPage;
 import io.qameta.allure.selenide.AllureSelenide;

@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationWithTestDataTests extends TestBase{
 
-
     @Test
     void successTest() {
         open("/automation-practice-form");
