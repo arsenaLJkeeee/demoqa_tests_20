@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.DisplayName;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.open;
 import static com.demoqa.utils.RandomUtils.*;
 import static io.qameta.allure.Allure.step;
 
@@ -23,7 +21,6 @@ public class RemoteRegistrationWithPageObjectsTestsWithTestData extends RemoteTe
      void successfulRegistrationTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Faker faker = new Faker();
-
 
         String firstName = faker.name().firstName(),
                 lastName = faker.name().lastName(),
@@ -39,6 +36,7 @@ public class RemoteRegistrationWithPageObjectsTestsWithTestData extends RemoteTe
                 city = getRandomCity(state),
                 address = faker.address().fullAddress(),
                 picture = "test_file.jpg";
+
         step("Open page and fill the form", () -> {registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
