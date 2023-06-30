@@ -18,7 +18,8 @@ import static io.qameta.allure.Allure.step;
 public class LsTest extends LsTestBase {
 
     @Test
-    void redesignCupisWalletClickTest() {
+    void mobRedesignCupisWalletClickTest() {
+
         SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открываем главную страницу", () -> {open(baseUrl);});
         step("Принимаем куки", () -> {$(byText("Принять все")).shouldBe(visible, Duration.ofSeconds(13000)).click();});
