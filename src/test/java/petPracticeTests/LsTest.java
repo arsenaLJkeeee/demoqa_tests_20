@@ -28,7 +28,7 @@ public class LsTest extends LsTestBase {
         step("Вводим пароль", () -> {$("#password").shouldBe(visible, Duration.ofSeconds(13000)).setValue("123123eE");});
         step("Кликаем по кнопке Войти", () -> {$(byText("Войти")).shouldBe(visible).click();});
         $(".bottom-menu_eG-q").lastChild().shouldBe(visible, Duration.ofSeconds(13000)).click();
-        $(".wallet__buttons-e1c20c").$(byText("Пополнить")).shouldBe(visible, Duration.ofSeconds(13000)).click();
+        step("Кликаем по кнопке Пополнить", () -> {$(".wallet__buttons-e1c20c").$(byText("Пополнить")).shouldBe(visible, Duration.ofSeconds(13000)).click();});
         step("Кликаем по каналу ЦУПИС", () -> {$(byText("Кошелек ЦУПИС")).shouldBe(visible, Duration.ofSeconds(13000)).click(ClickOptions.usingJavaScript());});
     }
 }
