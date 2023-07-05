@@ -73,3 +73,4 @@ public class ParametrizedTests extends ParametrizedTestsTestBase {
         $("#userEmail").shouldBe(cssClass("field-error"));
     }
 }
+
