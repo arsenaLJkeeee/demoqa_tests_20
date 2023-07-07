@@ -1,9 +1,7 @@
 package petPracticeTests;
 
-import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.demoqa.LsTestBase;
 
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Tag;
